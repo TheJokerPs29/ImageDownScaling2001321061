@@ -35,7 +35,6 @@ namespace ImageDownSizer
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            // Validate and parse the downscaling factor
             if (!float.TryParse(textBox1.Text, out float downscalingFactor))
             {
                 MessageBox.Show("Invalid downscaling factor. Please enter a valid number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -49,10 +48,8 @@ namespace ImageDownSizer
                 return;
             }
 
-            // Perform downscaling operation
             Image downScaledImage = ModifyImage((Bitmap)pictureBox1.Image, downscalingFactor);
 
-            // Display the down-scaled image
             pictureBox1.Image = downScaledImage;
         }
 
@@ -120,6 +117,11 @@ namespace ImageDownSizer
         private void button3_Click(object sender, EventArgs e)
         {
             pictureBox1.Image = selectedImage;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
